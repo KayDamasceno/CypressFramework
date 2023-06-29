@@ -9,3 +9,9 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get(loc.LOGIN.PASSWORD).type(password)
     cy.get(loc.LOGIN.BTN_ENTER).click()
 })
+
+Cypress.Commands.add('resetApp', () => {
+    cy.get(loc.MENU.SETTINGS).click()
+    cy.get(loc.MENU.RESETAR).click()
+    cy.get(loc.MESSAGE.CLOSE_TOAST).click()
+})

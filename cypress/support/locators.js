@@ -18,7 +18,9 @@ const locators = {
 
     },
     MESSAGE : {
-        NOVA_CONTA : '.toast-success'
+        TOAST_SUC : '.toast-success',
+        TOAST_ERR : '.toast-error',
+        CLOSE_TOAST: '.toast-close-button'
     } 
 }
 
