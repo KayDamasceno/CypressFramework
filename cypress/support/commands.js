@@ -19,7 +19,7 @@ Cypress.Commands.add('resetApp', () => {
 Cypress.Commands.add('getToken', (user, password) => {
     cy.request({
         method: 'POST',
-        url: 'https://barrigarest.wcaquino.me/signin',
+        url: 'signin',
         body: {
             email: user,
             senha: password,
@@ -34,9 +34,41 @@ Cypress.Commands.add('getToken', (user, password) => {
 Cypress.Commands.add('resetApp', (token) => {
     cy.request({
         method: 'GET',
-        url: 'https://barrigarest.wcaquino.me/reset',
+        url: 'reset',
         headers: {
             Authorization: `JWT ${token}`
         }
     }).its('status').should('be.equal', 200)
+})
+
+Cypress.Commands.add('getId', (nome, token) => {
+    
+    cy.request({
+        method: 'GET',
+        url: 'contas',
+        headers: {
+            Authorization: `JWT ${token}`
+        },
+        qs: {
+            nome: nome
+        }
+    }).then(res => {
+        return res.body[0].id
+    })
+})
+
+Cypress.Commands.add('getIdTransacoes', (nome, token) => {
+    
+    cy.request({
+        method: 'GET',
+        url: 'transacoes',
+        headers: {
+            Authorization: `JWT ${token}`
+        },
+        qs: {
+            nome: nome
+        }
+    }).then(res => {
+        return res.body[0].id
+    })
 })
