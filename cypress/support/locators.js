@@ -7,7 +7,10 @@ const locators = {
     MENU : {
         SETTINGS: '[title = "settings"]',
         CONTAS: '[href = "/contas"]',
-        RESETAR: '[href = "/reset"]'
+        RESETAR: '[href = "/reset"]',
+        MOVIMENTAR: "[title*= 'Cadastrar']",
+        HOME: '[data-test="menu-home"]',
+        EXTRATO: '[data-test="menu-extrato"]'
 
     },
     CONTAS : {
@@ -15,6 +18,15 @@ const locators = {
         SALVAR: '[alt= "Salvar"]',
         ALTERAR: '[title*= "Alterar"]',
         
+
+    },
+    MOVIMENTACAO : {
+        DESCRICAO : '[data-test = "descricao"]',
+        VALOR : '[data-test = "valor"]',
+        ENVOLVIDO : '[data-test = "envolvido"]',
+        SALVAR: '[alt= "Salvar"]',
+        STATUS: '[data-test = "status"]',
+        CONTA : '[data-test="conta"]'
 
     },
     MESSAGE : {
