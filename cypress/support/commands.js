@@ -30,3 +30,13 @@ Cypress.Commands.add('getToken', (user, password) => {
         return token
     })
 })
+
+Cypress.Commands.add('resetApp', (token) => {
+    cy.request({
+        method: 'GET',
+        url: 'https://barrigarest.wcaquino.me/reset',
+        headers: {
+            Authorization: `JWT ${token}`
+        }
+    }).its('status').should('be.equal', 200)
+})

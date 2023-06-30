@@ -11,7 +11,11 @@ describe('Cadastrar um novo usuário na página Barriga React', () => {
         cy.getToken('kayquedamasceno2@test.com', 'kayquetest')
             .then(tkn => {
                 token = tkn
+            }).then(token => {
+                cy.resetApp(token)
             })
+        
+       
         
     })
 
